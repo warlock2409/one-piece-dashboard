@@ -1,0 +1,58 @@
+
+<div class="m-4">
+    <div class="sm:w-4/5 lg:w-[450px] m-auto translate-y-1/2">
+        <p class="text-center my-4 text-white font-medium text-2xl " >Good Morning</p>
+        <hlm-tabs tab="account" class="w-full">
+            
+            <hlm-tabs-list class="grid w-full grid-cols-2" aria-label="tabs example">
+                <button hlmTabsTrigger="account">Login</button>
+                <button hlmTabsTrigger="password">Demo</button>
+            </hlm-tabs-list>
+
+            <div hlmTabsContent="account">
+                <section hlmCard>
+                    <div hlmCardHeader>
+                        <h3 hlmCardTitle>Account</h3>
+                        <p hlmCardDescription>Login to your account here. Click Login when you're done.</p>
+                    </div>
+                    <p hlmCardContent>
+                        <label class="my-1 block" hlmLabel>
+                            Email
+                        </label>
+                        <input class="my-3 w-full" type="email" hlmInput placeholder="Happyuser@onepiece.com" />
+                        <label class="my-1 block" hlmLabel>
+                            Password
+                        </label>
+                        <input class="mt-3 w-full" placeholder="Password" type="password" hlmInput />
+                    </p>
+                    <div hlmCardFooter>
+                        <button hlmBtn class="bg-violet-500">Login</button>
+                    </div>
+                </section>
+            </div>
+            <div hlmTabsContent="password">
+                <section hlmCard>
+                    <div hlmCardHeader>
+                        <h3 hlmCardTitle>Demo</h3>
+                        <p hlmCardDescription>Ready to fall in love with our work</p>
+                    </div>
+                    <p hlmCardContent>
+                        <label class="my-1 block" hlmLabel>
+                            Email
+                        </label>
+                        <input class="my-3 w-full" type="email" hlmInput />
+                        <label class="my-1 block" hlmLabel>
+                            User Name
+                        </label>
+                        <input class="mt-3 w-full" type="text" hlmInput />
+                    </p>
+                    <div hlmCardFooter>
+                        <button hlmBtn class="bg-orange-500">Let's Play</button>
+                    </div>
+                </section>
+            </div>
+        </hlm-tabs>
+    </div>
+    
+    
+</div>

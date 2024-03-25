@@ -21,6 +21,7 @@ export const inputVariants = cva(
 			size: 'default',
 			error: 'auto',
 		},
+		
 	},
 );
 type InputVariants = VariantProps<typeof inputVariants>;

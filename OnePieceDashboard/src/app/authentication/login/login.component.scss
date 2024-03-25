@@ -1,0 +1,25 @@
+.login_form{
+    width: 60%;
+    background-color: #473d8b;
+}
+
+.login_ad{
+
+}
+
+@media screen and (max-width: 768px) {
+    .login_ad {
+        display: none;
+    }
+    .login_form{
+        width: 100%;
+    }
+    
+}
+
+.bg_img{
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://img.freepik.com/free-photo/astronaut-explores-outer-dark-space-generative-al_169016-28607.jpg?t=st=1711381788~exp=1711385388~hmac=fcfb38c20422f346d30fa799afbbd11dde96ecd89edb18c449a583e9cd12a8ab&w=740);
+}
