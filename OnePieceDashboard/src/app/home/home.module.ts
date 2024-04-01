@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatNativeDateModule, provideNativeDateAdapter} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [BaseStationComponent,SideNavComponent,SideInfoComponent],
   imports: [
@@ -20,7 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule
   ]
 })
 export class HomeModule { }
