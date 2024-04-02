@@ -18,7 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatSidenavModule,
     HlmSeparatorDirective,
     BrnSeparatorComponent,
-    MatIconModule
+    MatIconModule,
   ]
 })
 export class BusinessModule { }

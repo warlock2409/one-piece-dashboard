@@ -1,12 +1,36 @@
-<div class="h-full">
-  <div style="display: flex; justify-content: space-between; align-items: center;" class="p-3">
-    <div>
-        <h1 style="margin-bottom: 5px;">26 Tuesday</h1>
-        <p style="margin: 0;">97 Incoming 180 Outgoing</p>
-    </div>
-    <div class="flex align-middle" style="display: flex; align-items: center; gap: 1.5rem;">
-        <input type="text" style="width: 400px; height: 2rem; border-radius: 5px; color: black;">
-        <mat-icon style="cursor:pointer; font-size: 2rem; width: 2.5rem; height: 2.5rem; border: 1px solid rgb(96, 97, 96); padding: 3px; border-radius: 5px;">local_mall</mat-icon>
+<mat-drawer-container class="booking-container h-full" autosize>
+
+  <mat-drawer #drawer class="booking-sidenav" mode="side" position="end">
+    <router-outlet name="secondRouter"></router-outlet>
+  </mat-drawer>
+
+  <div class="booking-content h-full">
+    <div class="h-full">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+        class="p-3"
+      >
+        <div>
+          <h1 style="margin-bottom: 5px">26 Tuesday</h1>
+          <p style="margin: 0">97 Incoming 180 Outgoing</p>
+        </div>
+        <div
+          class="flex align-middle"
+          style="display: flex; align-items: center; gap: 1.5rem"
+        >
+          <input
+            type="text"
+            style="width: 400px; height: 2rem; border-radius: 5px; color: black"
+          />
+          <a [routerLink]="[{ outlets: { secondRouter: ['invoice'] } }]">
+            <mat-icon class="mat_icon">local_mall</mat-icon>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</mat-drawer-container>

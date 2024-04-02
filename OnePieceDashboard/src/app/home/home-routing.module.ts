@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseStationComponent } from './base-station/base-station.component';
+import { AppointmentComponent } from '../business/appointment/appointment.component';
+import { CustomerComponent } from '../business/customer/customer.component';
 
-const routes: Routes = [
-  { path: "", component: BaseStationComponent, 
+const homeRoutes: Routes = [
+  { 
+    path: "", 
+    component: BaseStationComponent, 
     children: [
       { path: "business", loadChildren: () => import("../business/business.module").then((m) => m.BusinessModule) }
     ]
@@ -11,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(homeRoutes)],
   exports: [RouterModule]
 })
 export class HomeRoutingModule { }

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { TransferService } from '../../Service/transfer.service';
+import { info } from '../../Service/data.service';
 
 @Component({
   selector: 'app-side-info',
@@ -10,4 +12,16 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 })
 export class SideInfoComponent {
   selected!: Date | null;
+
+  dataTransporter=inject(TransferService);
+
+  info!:info[] ;
+
+  constructor(){
+    this.dataTransporter.sideNavInfo$.subscribe(data =>{
+      if(data != null)  
+        this.info = data;
+    })
+  }
+
 }

@@ -3,3 +3,13 @@
     <mat-calendar [(selected)]="selected"></mat-calendar>
   </mat-card>
 </div>
+
+<div class="border-y border-gray-500 p-2">
+  <span>Quick Links</span>
+</div>
+
+<div class="mt-2 mx-3" >
+  <a *ngFor="let infoLink of info" [routerLink]="infoLink.url">
+   <div class="my-3"> {{infoLink.name}}</div>
+  </a>
+</div>

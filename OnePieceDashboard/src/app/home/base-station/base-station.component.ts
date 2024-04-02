@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DataService, nav } from '../../Service/data.service';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-base-station',
@@ -7,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrl: './base-station.component.scss'
 })
 export class BaseStationComponent {
+ 
+  navElements$!: Observable<nav[]>; // Define navElements$ as Observable
 
+  constructor(private dataSource: DataService) {}
+
+  ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
+    this.navElements$ = this.dataSource.getSideNav();
+  }
+
+ 
 }
