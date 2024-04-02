@@ -1,0 +1,30 @@
+<mat-drawer-container class="booking-container h-full" autosize>
+
+    <mat-drawer #drawer class="booking-sidenav" mode="side" position="end" [opened]="book">
+      <app-invoice></app-invoice>
+    </mat-drawer>
+  
+    <div class="booking-content h-full">
+  
+      <div class="h-full p-3">
+  
+        <header style="align-items: center" class=" flex justify-between">
+          <div>
+            <h1 style="margin-bottom: 5px">Billing</h1>
+            <p style="margin: 0"></p>
+          </div>
+          <div class="flex align-middle" style="align-items: center; gap: 1.5rem">
+              <button hlmBtn (click)="book = !book">
+                  @if (!book) {
+                      <mat-icon>shopping_cart</mat-icon>
+                  }@else {
+                      <mat-icon>cancel</mat-icon>
+                  }
+              </button>
+          </div>
+         </header>
+      </div>
+  
+    </div>
+  
+  </mat-drawer-container>

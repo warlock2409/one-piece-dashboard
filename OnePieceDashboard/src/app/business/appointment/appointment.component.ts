@@ -12,18 +12,11 @@ import { filter } from 'rxjs';
 export class AppointmentComponent {
   @ViewChild('drawer') drawer!: MatDrawer;
 
+  book:boolean=false;
+  
   constructor(private router: Router) {
-    // Subscribe to router events to detect route changes
     
   }
 
-  ngAfterViewInit(): void {
-    this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
-      if (!event.url.includes('secondRouter')) {
-        this.drawer.close();
-      }else{
-        this.drawer.open();
-      }
-    });
-  }
+ 
 }

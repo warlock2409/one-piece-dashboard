@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './business-center.component.scss'
 })
 export class BusinessCenterComponent {
-
+  book:boolean=false;
 }

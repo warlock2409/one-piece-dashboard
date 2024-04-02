@@ -8,10 +8,23 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BusinessCenterComponent } from './business-center/business-center.component';
 import { HlmSeparatorDirective } from '@spartan-ng/ui-separator-helm';
 import { BrnSeparatorComponent } from '@spartan-ng/ui-separator-brain';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { BookingsComponent } from './bookings/bookings.component';
+import { AllCustomersComponent } from './all-customers/all-customers.component';
+import { BillingComponent } from './billing/billing.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
-  declarations: [BusinessCenterComponent,CustomerComponent,AppointmentComponent],
+  declarations: [
+    AllCustomersComponent,
+    BusinessCenterComponent,
+    CustomerComponent,
+    AppointmentComponent,
+    BookingsComponent,
+    BillingComponent,
+    InvoiceComponent
+  ],
   imports: [
     CommonModule,
     BusinessRoutingModule,
@@ -19,6 +32,7 @@ import {MatIconModule} from '@angular/material/icon';
     HlmSeparatorDirective,
     BrnSeparatorComponent,
     MatIconModule,
-  ]
+    HlmButtonDirective,
+  ],
 })
-export class BusinessModule { }
+export class BusinessModule {}

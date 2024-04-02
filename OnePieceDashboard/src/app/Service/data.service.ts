@@ -31,8 +31,9 @@ export class DataService {
       icon:"storefront",
       url:"business",
       info:[
-        {name:"Bookings",icon:"",url:"business"},
-        {name:"Customer",icon:"",url:"business/customer"}
+        {name:"Appointments",icon:"beenhere",url:"business/appointment"},
+        {name:"Customers",icon:"groups",url:"business/customers"},
+        {name:"Billing",icon:"local_mall",url:"business/billing"},
       ]
     },{
       name:"Calendar",

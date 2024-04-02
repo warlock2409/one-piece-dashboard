@@ -2,54 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { BusinessCenterComponent } from './business-center/business-center.component';
-import { CustomerComponent } from './customer/customer.component';
-import { InvoiceComponent } from './invoice/invoice.component';
+import { AllCustomersComponent } from './all-customers/all-customers.component';
+import { BillingComponent } from './billing/billing.component';
 
-// const businessRoutes: Routes = [
-//   {
-//     path: 'booking',
-//     component: BusinessCenterComponent,
-//     children: [
-//       {
-//         path: '', // empty path to ensure '/business/booking' is included in the URL
-//         component: AppointmentComponent,
-//       },
-//       {
-//         path: 'invoice',
-//         component: CustomerComponent,
-//         outlet: 'secondRouter'
-//       },
-//     ],
-//   },
-//   { path: 'invoice', component: InvoiceComponent, outlet: 'secondRouter' },
-
-// ];
 const businessRoutes: Routes = [
   {
     path: '',
     component: BusinessCenterComponent,
     children: [
       {
-        path: '',
+        path: 'appointment',
         component: AppointmentComponent,
-        children: [
-          {
-            path: 'invoice',
-            component: InvoiceComponent,
-            outlet: 'secondRouter',
-          },
-        ],
       },
       {
-        path: 'customer',
-        component: CustomerComponent,
-        children: [
-          {
-            path: 'invoice',
-            component: InvoiceComponent,
-            outlet: 'secondRouter',
-          },
-        ],
+        path: 'customers',
+        component: AllCustomersComponent,
+      },
+      {
+        path: 'billing',
+        component: BillingComponent,
       },
     ],
   },

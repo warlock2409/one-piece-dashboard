@@ -1,36 +1,30 @@
 <mat-drawer-container class="booking-container h-full" autosize>
 
-  <mat-drawer #drawer class="booking-sidenav" mode="side" position="end">
-    <router-outlet name="secondRouter"></router-outlet>
+  <mat-drawer #drawer class="booking-sidenav" mode="side" position="end" [opened]="book">
+    <app-bookings></app-bookings>
   </mat-drawer>
 
   <div class="booking-content h-full">
-    <div class="h-full">
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-        class="p-3"
-      >
+
+    <div class="h-full p-3">
+
+      <header style="align-items: center" class=" flex justify-between">
         <div>
           <h1 style="margin-bottom: 5px">26 Tuesday</h1>
           <p style="margin: 0">97 Incoming 180 Outgoing</p>
         </div>
-        <div
-          class="flex align-middle"
-          style="display: flex; align-items: center; gap: 1.5rem"
-        >
-          <input
-            type="text"
-            style="width: 400px; height: 2rem; border-radius: 5px; color: black"
-          />
-          <a [routerLink]="[{ outlets: { secondRouter: ['invoice'] } }]">
-            <mat-icon class="mat_icon">local_mall</mat-icon>
-          </a>
+        <div class="flex align-middle" style="align-items: center; gap: 1.5rem">
+            <button hlmBtn (click)="book = !book">
+                @if (!book) {
+                    <mat-icon>pending_actions</mat-icon>
+                }@else {
+                    <mat-icon>cancel</mat-icon>
+                }
+            </button>
         </div>
-      </div>
+       </header>
     </div>
+
   </div>
+
 </mat-drawer-container>

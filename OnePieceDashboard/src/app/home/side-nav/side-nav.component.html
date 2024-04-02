@@ -1,20 +1,27 @@
 <div style="display: flex; position: fixed; gap: 16px">
-    
-  <div class="w-12 flex flex-col" style="height: 100vh; justify-content: space-between;background: #181f27;">
+  <div
+    class="w-12 flex flex-col"
+    style="height: 100vh; justify-content: space-between; background: #181f27"
+  >
     <!-- Top Menu -->
-    <div class="flex flex-col gap-5 mt-4" style="align-items: center;">
-        <mat-icon *ngFor="let element of navElements" [routerLink]="element.url" (click)="changeNavInfo(element)" routerLinkActive="active" class="cursor-pointer"> 
-          {{element.icon}}
+    <div class="flex flex-col gap-3 mt-4" style="align-items: center">
+
+      <a *ngFor="let element of navElements" [routerLink]="element.url">
+        <mat-icon
+          (click)="changeNavInfo(element)"
+          routerLinkActive="active"
+          class="cursor-pointer"
+        >
+          {{ element.icon }}
         </mat-icon>
+      </a>
+
     </div>
 
     <!-- Bottom Menu -->
-    <div class="flex flex-col gap-5 mb-5 " style="align-items: center;">
-        <mat-icon>bar_chart_4_bars</mat-icon>
-        <mat-icon>account_box</mat-icon>
+    <div class="flex flex-col gap-5 mb-5" style="align-items: center">
+      <mat-icon>bar_chart_4_bars</mat-icon>
+      <mat-icon>account_box</mat-icon>
     </div>
-
   </div>
-
-  
 </div>
