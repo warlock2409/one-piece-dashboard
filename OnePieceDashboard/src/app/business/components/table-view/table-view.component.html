@@ -106,13 +106,13 @@
                 <div hlmPopoverContent class="w-80 grid gap-4" *brnPopoverContent="let ctx">
                     <!-- <button id="edit-profile" variant="outline" brnPopoverTrigger hlmBtn style="height: 2rem;">Add</button> -->
                   <div class="space-y-2">
-                    <h4 class="font-medium leading-none">Amount</h4>
+                    <!-- <h4 class="font-medium leading-none">Amount</h4> -->
                     <p class="text-sm text-muted-foreground">Set Number Quantity</p>
                   </div>
                   <div class="grid gap-2">
                     <div class="grid grid-cols-3 items-center gap-4">
                       <label hlmLabel for="width">Quantity</label>
-                      <input hlmInput id="width" [defaultValue]="'1'" class="col-span-2 h-8" />
+                      <input hlmInput id="width" [defaultValue]="'1'" class="col-span-2 h-8" type="number" />
                     </div>
                     <div class="grid grid-cols-3 items-center gap-4">
                       <label hlmLabel for="maxWidth">Price</label>

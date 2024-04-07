@@ -10,7 +10,7 @@
         <header style="align-items: center" class=" flex justify-between">
           <div>
             <h1 style="margin-bottom: 5px">Customer</h1>
-            <p style="margin: 0">0 Customer</p>
+            <p style="margin: 0">10 Customer</p>
           </div>
           <div class="flex align-middle" style="align-items: center; gap: 1.5rem">
               <button hlmBtn (click)="book = !book">
@@ -23,7 +23,7 @@
           </div>
          </header>
 
-         <div class="mt-8">
+         <div class="mt-16">
             <app-table-view [dataSource]="customerDataSource"></app-table-view>
          </div>
 

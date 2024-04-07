@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataSource } from '../../Service/data.service';
+import { provideIcons } from '@ng-icons/core';
+import { lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
 class CustomerDataSource implements DataSource{
   data: any[];
@@ -42,7 +44,7 @@ const displayedColumns: string[] = ['user',"qty","addToInvoice",'symbol','action
   selector: 'app-billing',
   standalone: false,
   templateUrl: './billing.component.html',
-  styleUrl: './billing.component.scss'
+  styleUrl: './billing.component.scss',
 })
 export class BillingComponent {
   book:boolean=false;

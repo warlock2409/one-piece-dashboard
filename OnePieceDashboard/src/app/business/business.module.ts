@@ -63,7 +63,6 @@ import {
     MatButtonModule,
     HlmPopoverContentDirective,
     HlmPopoverCloseDirective,
-    HlmButtonDirective,
     HlmLabelDirective,
     HlmInputDirective,
     CommonModule,
