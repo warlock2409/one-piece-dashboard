@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+export interface DataSource{
+  data:any[];
+  columns:any[];
+}
+
 export interface nav {
   name:string;
   icon:string;

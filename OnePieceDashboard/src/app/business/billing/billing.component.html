@@ -1,30 +1,44 @@
 <mat-drawer-container class="booking-container h-full" autosize>
 
-    <mat-drawer #drawer class="booking-sidenav" mode="side" position="end" [opened]="book">
+    <mat-drawer #drawer class="invoice-sidenav" mode="side" position="end" opened style="background: #0b101a;">
       <app-invoice></app-invoice>
     </mat-drawer>
   
-    <div class="booking-content h-full">
-  
+    <div class="booking-content h-full container_component">
       <div class="h-full p-3">
-  
         <header style="align-items: center" class=" flex justify-between">
           <div>
             <h1 style="margin-bottom: 5px">Billing</h1>
             <p style="margin: 0"></p>
           </div>
-          <div class="flex align-middle" style="align-items: center; gap: 1.5rem">
-              <button hlmBtn (click)="book = !book">
-                  @if (!book) {
-                      <mat-icon>shopping_cart</mat-icon>
-                  }@else {
-                      <mat-icon>cancel</mat-icon>
-                  }
-              </button>
-          </div>
          </header>
       </div>
-  
+
+      <div>
+        <mat-drawer-container class="booking-container h-full" autosize>
+
+          <mat-drawer #drawer class="item-sidenav container_component" mode="side" opened style="background: #0b101a;">
+            
+            <div class="px-3">
+              <div class="my-2 flex gap-3 items-center p-2 nav_links" routerLinkActive="active">
+                <div>Grooming Service</div>
+              </div>
+              <div class="my-2 flex gap-3 items-center p-2 nav_links" routerLinkActive="active">
+                <div>Day Care Service</div>
+              </div>
+              <div class="my-2 flex gap-3 items-center p-2 nav_links" routerLinkActive="active">
+                <div>Boarding Service</div>
+              </div>
+            </div>
+
+          </mat-drawer>
+        
+          <div class="booking-content h-full container_component p-8">
+            <app-table-view [dataSource]="customerDataSource"></app-table-view>
+          </div>
+        
+        </mat-drawer-container>
+      </div>
     </div>
   
   </mat-drawer-container>

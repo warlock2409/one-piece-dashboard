@@ -32,6 +32,17 @@ import { HlmInputDirective } from '../../../libs/ui/ui-input-helm/src/lib/hlm-in
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import { HlmLabelDirective } from '../../../libs/ui/ui-label-helm/src/lib/hlm-label.directive';
+import { HlmPopoverCloseDirective } from '../../../libs/ui/ui-popover-helm/src/lib/hlm-popover-close.directive';
+import { HlmPopoverContentDirective } from '../../../libs/ui/ui-popover-helm/src/lib/hlm-popover-content.directive';
+import {
+  BrnPopoverCloseDirective,
+  BrnPopoverComponent,
+  BrnPopoverContentDirective,
+  BrnPopoverTriggerDirective,
+} from '@spartan-ng/ui-popover-brain';
+
 @NgModule({
   declarations: [
     AllCustomersComponent,
@@ -42,9 +53,19 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     BillingComponent,
     InvoiceComponent,
     AppointmentListComponent,
+    TableViewComponent
   ],
   imports: [
+    BrnPopoverComponent,
+    BrnPopoverTriggerDirective,
+    BrnPopoverContentDirective,
+    BrnPopoverCloseDirective,
     MatButtonModule,
+    HlmPopoverContentDirective,
+    HlmPopoverCloseDirective,
+    HlmButtonDirective,
+    HlmLabelDirective,
+    HlmInputDirective,
     CommonModule,
     BusinessRoutingModule,
     MatTableModule,
