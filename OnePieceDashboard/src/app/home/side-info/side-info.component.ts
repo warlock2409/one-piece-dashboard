@@ -11,10 +11,8 @@ import { info } from '../../Service/data.service';
   providers: [provideNativeDateAdapter()],
 })
 export class SideInfoComponent {
-  selected!: Date | null;
-
+  selected: Date= new Date();
   dataTransporter=inject(TransferService);
-
   info!:info[] ;
 
   constructor(){
@@ -22,6 +20,14 @@ export class SideInfoComponent {
       if(data != null)  
         this.info = data;
     })
+
+    console.log(this.selected);
+    
+  }
+
+  dateChanged(event:Date){
+    console.log(event,"Date");
+    this.dataTransporter.sendInfoDate(event);
   }
 
 }

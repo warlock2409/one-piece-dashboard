@@ -4,6 +4,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { BusinessCenterComponent } from './business-center/business-center.component';
 import { AllCustomersComponent } from './all-customers/all-customers.component';
 import { BillingComponent } from './billing/billing.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 const businessRoutes: Routes = [
   {
@@ -13,6 +15,7 @@ const businessRoutes: Routes = [
       {
         path: 'appointment',
         component: AppointmentComponent,
+        children: [{ path: 'booking', component: BookingsComponent },{path:'customer',component:CustomerComponent}],
       },
       {
         path: 'customers',

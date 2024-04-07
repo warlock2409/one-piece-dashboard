@@ -1,3 +1,21 @@
 .active{
-    color: rgb(39, 240, 189);
+    background-color: #181f27 !important;
+}
+
+.mat-icon{
+    font-size: 20px !important;
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.nav_links{
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    
+}
+
+.nav_links:hover{
+    box-sizing: border-box;
+    background-color: rgba(240, 248, 255, 0.103);
 }

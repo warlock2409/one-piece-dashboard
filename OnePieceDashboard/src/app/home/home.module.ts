@@ -11,6 +11,7 @@ import {MatNativeDateModule, provideNativeDateAdapter} from '@angular/material/c
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [BaseStationComponent,SideNavComponent,SideInfoComponent],
@@ -22,7 +23,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatNativeDateModule,
     MatDatepickerModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

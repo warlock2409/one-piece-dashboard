@@ -1,5 +1,9 @@
 @import '@angular/cdk/overlay-prebuilt.css';
 
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '@angular/material/prebuilt-themes/purple-green.css';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,16 +16,17 @@
 }
 
 :root {
---background: 0 0% 100%;
+// --background: 0 0% 100%;
+--background: 221.25deg 26.67% 11.76%;
 --foreground: 20 14.3% 4.1%;
 --muted: 60 4.8% 95.9%;
 --muted-foreground: 25 5.3% 44.7%;
---popover: 0 0% 100%;
---popover-foreground: 20 14.3% 4.1%;
+--popover:  221.25deg 26.67% 11.76%;
+--popover-foreground: 208deg 7.52% 92.5%;
 --card: 0 0% 100%;
 --card-foreground: 20 14.3% 4.1%;
 --border: 20 5.9% 90%;
---input: 20 5.9% 90%;
+--input: 291.76deg 89.11% 34.64% / 34%;
 --primary: 24 9.8% 10%;
 --primary-foreground: 60 9.1% 97.8%;
 --secondary: 60 4.8% 95.9%;
@@ -34,26 +39,34 @@
 --radius: .5rem;
 }
 
-.dark {
---background: 20 14.3% 4.1%;
---foreground: 60 9.1% 97.8%;
---muted: 12 6.5% 15.1%;
---muted-foreground: 24 5.4% 63.9%;
---popover: 20 14.3% 4.1%;
---popover-foreground: 60 9.1% 97.8%;
---card: 20 14.3% 4.1%;
---card-foreground: 60 9.1% 97.8%;
---border: 12 6.5% 15.1%;
---input: 12 6.5% 15.1%;
---primary: 60 9.1% 97.8%;
---primary-foreground: 24 9.8% 10%;
---secondary: 12 6.5% 15.1%;
---secondary-foreground: 60 9.1% 97.8%;
---accent: 12 6.5% 15.1%;
---accent-foreground: 60 9.1% 97.8%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 60 9.1% 97.8%;
---ring: 24 5.7% 82.9%;
-}
+// .dark {
+// --background: 20 14.3% 4.1%;
+// --foreground: 60 9.1% 97.8%;
+// --muted: 12 6.5% 15.1%;
+// --muted-foreground: 24 5.4% 63.9%;
+// --popover: 20 14.3% 4.1%;
+// --popover-foreground: 60 9.1% 97.8%;
+// --card: 20 14.3% 4.1%;
+// --card-foreground: 60 9.1% 97.8%;
+// --border: 12 6.5% 15.1%;
+// --input: 12 6.5% 15.1%;
+// --primary: 60 9.1% 97.8%;
+// --primary-foreground: 24 9.8% 10%;
+// --secondary: 12 6.5% 15.1%;
+// --secondary-foreground: 60 9.1% 97.8%;
+// --accent: 12 6.5% 15.1%;
+// --accent-foreground: 60 9.1% 97.8%;
+// --destructive: 0 62.8% 30.6%;
+// --destructive-foreground: 60 9.1% 97.8%;
+// --ring: 24 5.7% 82.9%;
+// }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }
+
+.mat-icon{
+    color: aliceblue;
+}
+
+.container_component{
+    background: #0b101a; min-height: 100vh;
+}
