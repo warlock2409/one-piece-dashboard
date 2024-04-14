@@ -12,5 +12,7 @@ import { provideIcons } from '@ng-icons/core';
 })
 export class TableViewComponent {
   @Input() dataSource!: DataSource;  
+  @Input() width!: string;  
+
   
 }

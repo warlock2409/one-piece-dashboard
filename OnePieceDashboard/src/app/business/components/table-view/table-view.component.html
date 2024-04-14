@@ -2,158 +2,161 @@
     <input class="w-80" hlmInput placeholder='Search' type='email' />
 </div>
 
-<table mat-table [dataSource]="dataSource.data" style="background-color: #161b26;border-radius:10px !important;" class="font">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef class="w-8 title" style="border-radius: 10px;">Status</th>
-      <td mat-cell *matCellDef="let element" style="border-radius: 10px;">
-        <div>
-          <mat-icon style="font-size: 36px; height: 36px; width: 36px;">radio_button_unchecked</mat-icon>
-        </div>
-      </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef class="title"> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-     <!-- Symbol Column -->
-     <ng-container matColumnDef="user">
-      <th mat-header-cell *matHeaderCellDef class="title" style="border-radius: 10px;"> User Name </th>
-      <td mat-cell *matCellDef="let element" style="border-radius: 10px;"> {{element.user}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef class="title" >Pets</th>
-      <td mat-cell *matCellDef="let element">
-        <div class="flex gap-2 items-center">
-          <img src="../../../../assets/dog.png" alt="" srcset="">
-          <img src="../../../../assets/cat.png" alt="" srcset="">
-        </div>
-      </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="services">
-      <th mat-header-cell *matHeaderCellDef class="title"> Appointment </th>
-      <td mat-cell *matCellDef="let element" >
-        <div class="flex gap-2 flex-wrap" style="min-width: 70px;">
-          <img src="../../../../assets/calendar.png" alt="" srcset="">
-          <img src="../../../../assets/bone.png" alt="" srcset="">
-          <img src="../../../../assets/haircut.png" alt="" srcset="">
-        </div>
-      </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="dateRange">
-      <th mat-header-cell *matHeaderCellDef class="title" > Date </th>
-      <td mat-cell *matCellDef="let element" >
-        <div class="flex gap-4">
-            <div class="date_card">
-                <div>
-                    From
-                </div>
-                <div class="date">
-                    4/11
-                </div>
-            </div>
-            <div class="date_card to">
-                <div>
-                    To
-                </div>
-                <div class="date">
-                    4/11
-                </div>
-            </div>
-        </div>
-        
-      </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="joined">
-      <th mat-header-cell *matHeaderCellDef class="title"> Joined</th>
-      <td mat-cell *matCellDef="let element" >
-        {{element.from}}
-      </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef class="title"> Amount </th>
-      <td mat-cell *matCellDef="let element"> 
-        <div class="flex">
-          <div>$100000.00</div>
-        </div>
-      </td>
-    </ng-container>
+<section class="example-container mat-elevation-z8" tabindex="0">
+<table  mat-table [dataSource]="dataSource.data" style="background-color: #161b26;border-radius:10px !important;" class="font" [style.width]="width">
 
-    <ng-container matColumnDef="qty">
-        <th mat-header-cell *matHeaderCellDef class="title"> Qty </th>
-        <td mat-cell *matCellDef="let element"> 
-          {{element.qty}}
-        </td>
-    </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="position" sticky>
+    <th mat-header-cell *matHeaderCellDef class="w-8 title" style="border-radius: 10px;">Status</th>
+    <td mat-cell *matCellDef="let element" style="border-radius: 10px;">
+      <div>
+        <mat-icon style="font-size: 36px; height: 36px; width: 36px;">radio_button_unchecked</mat-icon>
+      </div>
+    </td>
+  </ng-container>
 
-    <ng-container matColumnDef="addToInvoice">
-        <th mat-header-cell *matHeaderCellDef class="title" >  </th>
-        <td mat-cell *matCellDef="let element"> 
-            <brn-popover sideOffset="5" closeDelay="100">
-                <button id="edit-profile" variant="outline" brnPopoverTrigger hlmBtn style="height: 2rem;">Add To Invoice</button>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="title"> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
 
-                <div hlmPopoverContent class="w-80 grid gap-4" *brnPopoverContent="let ctx">
-                    <!-- <button id="edit-profile" variant="outline" brnPopoverTrigger hlmBtn style="height: 2rem;">Add</button> -->
-                  <div class="space-y-2">
-                    <!-- <h4 class="font-medium leading-none">Amount</h4> -->
-                    <p class="text-sm text-muted-foreground">Set Number Quantity</p>
-                  </div>
-                  <div class="grid gap-2">
-                    <div class="grid grid-cols-3 items-center gap-4">
-                      <label hlmLabel for="width">Quantity</label>
-                      <input hlmInput id="width" [defaultValue]="'1'" class="col-span-2 h-8" type="number" />
-                    </div>
-                    <div class="grid grid-cols-3 items-center gap-4">
-                      <label hlmLabel for="maxWidth">Price</label>
-                      <input hlmInput id="maxWidth" [defaultValue]="'$300'" class="col-span-2 h-8" />
-                    </div>
-                  </div>
-                </div>
-            </brn-popover>
-        </td>
-      </ng-container>
-  
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef  style="text-align: center;border-radius:10px !important;"> </th>
-      <td mat-cell *matCellDef="let element" style="text-align: end;border-radius:10px !important;" > 
-          <div>
-            <button hlmBtn  class="h-6 w-6 p-0.5" align="end" [brnMenuTriggerFor]="menu">
-              <hlm-icon class="h-4 w-4" name="lucideMoreHorizontal" />
-            </button>
-            <ng-template #menu>
-              <hlm-menu>
-                <hlm-menu-label>Actions</hlm-menu-label>
-                <hlm-menu-separator />
-                <hlm-menu-group>
-                <button hlmMenuItem>View Appointment</button>
-                </hlm-menu-group>
-                <hlm-menu-separator />
-                <hlm-menu-group>
-                  <button hlmMenuItem>View Pet Owner</button>
-                  <button hlmMenuItem>View Pet</button>
-                </hlm-menu-group>
-                <hlm-menu-separator />
-                <hlm-menu-group>
-                  <button hlmMenuItem>Check Out</button>
-                </hlm-menu-group>
-              </hlm-menu>
-            </ng-template>
+   <!-- Symbol Column -->
+   <ng-container matColumnDef="user">
+    <th mat-header-cell *matHeaderCellDef class="title" style="border-radius: 10px;"> User Name </th>
+    <td mat-cell *matCellDef="let element" style="border-radius: 10px;"> {{element.user}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef class="title" >Pets</th>
+    <td mat-cell *matCellDef="let element">
+      <div class="flex gap-2 items-center">
+        <img src="../../../../assets/dog.png" alt="" srcset="">
+        <img src="../../../../assets/cat.png" alt="" srcset="">
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="services">
+    <th mat-header-cell *matHeaderCellDef class="title"> Appointment </th>
+    <td mat-cell *matCellDef="let element" >
+      <div class="flex gap-2 flex-wrap" style="min-width: 70px;">
+        <img src="../../../../assets/calendar.png" alt="" srcset="">
+        <img src="../../../../assets/bone.png" alt="" srcset="">
+        <img src="../../../../assets/haircut.png" alt="" srcset="">
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dateRange">
+    <th mat-header-cell *matHeaderCellDef class="title" > Date </th>
+    <td mat-cell *matCellDef="let element" >
+      <div class="flex gap-4">
+          <div class="date_card">
+              <div>
+                  From
+              </div>
+              <div class="date">
+                  4/11
+              </div>
           </div>
+          <div class="date_card to">
+              <div>
+                  To
+              </div>
+              <div class="date">
+                  4/11
+              </div>
+          </div>
+      </div>
+      
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="joined">
+    <th mat-header-cell *matHeaderCellDef class="title"> Joined</th>
+    <td mat-cell *matCellDef="let element" >
+      {{element.from}}
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef class="title"> Amount </th>
+    <td mat-cell *matCellDef="let element"> 
+      <div class="flex">
+        <div>$100000.00</div>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="qty">
+      <th mat-header-cell *matHeaderCellDef class="title"> Qty </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.qty}}
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="addToInvoice">
+      <th mat-header-cell *matHeaderCellDef class="title" >  </th>
+      <td mat-cell *matCellDef="let element" > 
+          <brn-popover sideOffset="5" closeDelay="100">
+              <button id="edit-profile" variant="outline" brnPopoverTrigger hlmBtn style="height: 2rem;">Add To Invoice</button>
+
+              <div hlmPopoverContent class="w-80 grid gap-4" *brnPopoverContent="let ctx">
+                  <!-- <button id="edit-profile" variant="outline" brnPopoverTrigger hlmBtn style="height: 2rem;">Add</button> -->
+                <div class="space-y-2">
+                  <!-- <h4 class="font-medium leading-none">Amount</h4> -->
+                  <p class="text-sm text-muted-foreground">Set Number Quantity</p>
+                </div>
+                <div class="grid gap-2">
+                  <div class="grid grid-cols-3 items-center gap-4">
+                    <label hlmLabel for="width">Quantity</label>
+                    <input hlmInput id="width" [defaultValue]="'1'" class="col-span-2 h-8" type="number" />
+                  </div>
+                  <div class="grid grid-cols-3 items-center gap-4">
+                    <label hlmLabel for="maxWidth">Price</label>
+                    <input hlmInput id="maxWidth" [defaultValue]="'$300'" class="col-span-2 h-8" />
+                  </div>
+                </div>
+              </div>
+          </brn-popover>
       </td>
     </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="dataSource.columns" ></tr>
-    <tr mat-row *matRowDef="let row; columns: dataSource.columns;"></tr>
-  
-  </table>
+
+  <ng-container matColumnDef="actions" stickyEnd>
+    <th mat-header-cell *matHeaderCellDef  style="text-align: center;border-radius:10px !important;"> </th>
+    <td mat-cell *matCellDef="let element" style="text-align: end;border-radius:10px !important;" > 
+        <div>
+          <button hlmBtn  class="h-6 w-6 p-0.5" align="end" [brnMenuTriggerFor]="menu">
+            <hlm-icon class="h-4 w-4" name="lucideMoreHorizontal" />
+          </button>
+          <ng-template #menu>
+            <hlm-menu>
+              <hlm-menu-label>Actions</hlm-menu-label>
+              <hlm-menu-separator />
+              <hlm-menu-group>
+              <button hlmMenuItem>View Appointment</button>
+              </hlm-menu-group>
+              <hlm-menu-separator />
+              <hlm-menu-group>
+                <button hlmMenuItem>View Pet Owner</button>
+                <button hlmMenuItem>View Pet</button>
+              </hlm-menu-group>
+              <hlm-menu-separator />
+              <hlm-menu-group>
+                <button hlmMenuItem>Check Out</button>
+              </hlm-menu-group>
+            </hlm-menu>
+          </ng-template>
+        </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="dataSource.columns " ></tr>
+  <tr mat-row *matRowDef="let row; columns: dataSource.columns;"></tr>
+
+</table>
+</section>

@@ -64,9 +64,22 @@ html, body { height: 100%; }
 body { margin: 0; }
 
 .mat-icon{
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
 .container_component{
     background: #0b101a; min-height: 100vh;
+}
+
+.mat-horizontal-stepper-header-container {
+    background-color: #0b101a;
+}
+
+.mat-horizontal-content-container {
+    background-color: #161b26 !important;
+    padding: 24px 24px 24px 24px !important;
+}
+
+.mat-mdc-form-field {
+    display: inline !important;
 }

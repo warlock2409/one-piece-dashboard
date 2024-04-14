@@ -7,7 +7,7 @@
   <mat-drawer-content class="login_ad" style="display: flex">
     <div
       style="
-        width: 310px !important;
+        width: 280px !important;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -18,8 +18,9 @@
       <app-side-info></app-side-info>
     </div>
 
-    <div style="width: 100%">
+    <div style="width: calc(100% - 280px)">
       <router-outlet></router-outlet>
     </div>
+    
   </mat-drawer-content>
 </mat-drawer-container>

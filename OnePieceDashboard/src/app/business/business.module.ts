@@ -14,11 +14,12 @@ import {
   HlmButtonModule,
 } from '@spartan-ng/ui-button-helm';
 import { BookingsComponent } from './bookings/bookings.component';
+import {MatStepperModule} from '@angular/material/stepper';
 import { AllCustomersComponent } from './all-customers/all-customers.component';
 import { BillingComponent } from './billing/billing.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrnMenuTriggerDirective } from '@spartan-ng/ui-menu-brain';
 import { HlmMenuBarComponent, HlmMenuBarItemDirective, HlmMenuComponent, HlmMenuGroupComponent, HlmMenuItemCheckComponent, HlmMenuItemCheckboxDirective, HlmMenuItemDirective, HlmMenuItemIconDirective, HlmMenuItemRadioComponent, HlmMenuItemRadioDirective, HlmMenuItemSubIndicatorComponent, HlmMenuLabelComponent, HlmMenuModule, HlmMenuSeparatorComponent, HlmMenuShortcutComponent, HlmSubMenuComponent } from '@spartan-ng/ui-menu-helm';
 import { BrnSelectModule } from '@spartan-ng/ui-select-brain';
@@ -42,6 +43,9 @@ import {
   BrnPopoverContentDirective,
   BrnPopoverTriggerDirective,
 } from '@spartan-ng/ui-popover-brain';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -57,10 +61,16 @@ import {
   ],
   imports: [
     BrnPopoverComponent,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     BrnPopoverTriggerDirective,
     BrnPopoverContentDirective,
     BrnPopoverCloseDirective,
     MatButtonModule,
+    MatStepperModule,
     HlmPopoverContentDirective,
     HlmPopoverCloseDirective,
     HlmLabelDirective,

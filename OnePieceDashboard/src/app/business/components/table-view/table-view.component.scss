@@ -1,29 +1,84 @@
-.title{
-    font-size: 12px; font-weight: 600;
+.title {
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.font{
-    font-family: "Open Sans", sans-serif;
+.font {
+  font-family: "Open Sans", sans-serif;
 }
 
-.date_card{
-    width: 43px;
-    height: 45px;
-    padding: 0px 5px;
-    border-radius: 3px 3px 3px 3px;
-    background: rgb(14, 97, 14);
-    color: aliceblue;
-    text-align: center;
+.date_card {
+  width: 43px;
+  height: 45px;
+  padding: 0px 5px;
+  border-radius: 3px 3px 3px 3px;
+  background: #1197117a;
+  color: aliceblue;
+  text-align: center;
 }
 
-.to{
-    background-color: rgb(160, 32, 32);
+.to {
+  background-color: #a10808ad;
 }
 
-.date{
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 3px;
-    font-weight: 600;
-    font-family: 'Open Sans', Courier, monospace;
+.date {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 3px;
+  font-weight: 600;
+  font-family: "Open Sans", Courier, monospace;
+}
+
+.example-container {
+  // height: 400px;
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+
+}
+
+
+
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+  padding-left: 8px;
+}
+
+.mat-mdc-table-sticky-border-elem-right {
+  // border-left: 1px solid #6d6b6b;
+}
+
+.mat-mdc-table-sticky-border-elem-left {
+  // border-right: 1px solid #5e5c5c;
+}
+
+//   .container {
+//     width: calc(100% - 350px); /* Adjust width as needed */
+//     height: 300px; /* Adjust height as needed */
+//     overflow-y: auto; /* Enable vertical scrollbar */
+//     overflow-x: hidden; /* Hide horizontal scrollbar */
+//     border: 1px solid #ccc; /* Add border for visual clarity */
+//     padding: 10px; /* Add padding for content */
+//   }
+
+.example-container::-webkit-scrollbar {
+  height: 5px; /* Set the height of the scrollbar */
+}
+
+.example-container::-webkit-scrollbar-track {
+  background: #312f2f75; /* Set the background color of the track */
+}
+
+.example-container:hover {
+}
+.example-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change color on hover */
+}
+.example-container::-webkit-scrollbar-thumb {
+  background: #313131;
 }
