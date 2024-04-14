@@ -14,5 +14,9 @@ export class TableViewComponent {
   @Input() dataSource!: DataSource;  
   @Input() width!: string;  
 
+  elementSelected(element:any){
+    console.log(element);
+    
+  }
   
 }

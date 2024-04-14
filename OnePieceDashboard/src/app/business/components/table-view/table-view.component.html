@@ -50,28 +50,17 @@
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="dateRange">
-    <th mat-header-cell *matHeaderCellDef class="title" > Date </th>
+  <ng-container matColumnDef="from">
+    <th mat-header-cell *matHeaderCellDef class="title" > From </th>
     <td mat-cell *matCellDef="let element" >
-      <div class="flex gap-4">
-          <div class="date_card">
-              <div>
-                  From
-              </div>
-              <div class="date">
-                  4/11
-              </div>
-          </div>
-          <div class="date_card to">
-              <div>
-                  To
-              </div>
-              <div class="date">
-                  4/11
-              </div>
-          </div>
-      </div>
-      
+      {{element.from}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="to">
+    <th mat-header-cell *matHeaderCellDef class="title" > To </th>
+    <td mat-cell *matCellDef="let element" >
+      {{element.to}}
     </td>
   </ng-container>
 
@@ -137,18 +126,20 @@
             <hlm-menu>
               <hlm-menu-label>Actions</hlm-menu-label>
               <hlm-menu-separator />
+
               <hlm-menu-group>
               <button hlmMenuItem>View Appointment</button>
               </hlm-menu-group>
-              <hlm-menu-separator />
+              <hlm-menu-separator/>
               <hlm-menu-group>
-                <button hlmMenuItem>View Pet Owner</button>
+                <button hlmMenuItem routerLink="./customer">View Pet Owner</button>
                 <button hlmMenuItem>View Pet</button>
               </hlm-menu-group>
-              <hlm-menu-separator />
+              <hlm-menu-separator/>
               <hlm-menu-group>
                 <button hlmMenuItem>Check Out</button>
               </hlm-menu-group>
+
             </hlm-menu>
           </ng-template>
         </div>
@@ -156,7 +147,8 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="dataSource.columns " ></tr>
-  <tr mat-row *matRowDef="let row; columns: dataSource.columns;"></tr>
+
+  <tr mat-row *matRowDef="let row; columns: dataSource.columns;" (click)="elementSelected(row)"></tr>
 
 </table>
 </section>

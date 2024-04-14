@@ -20,6 +20,7 @@ const businessRoutes: Routes = [
       {
         path: 'customers',
         component: AllCustomersComponent,
+        children: [{path:'customer',component:CustomerComponent}],
       },
       {
         path: 'billing',

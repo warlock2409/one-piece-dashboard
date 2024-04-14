@@ -48,7 +48,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HlmCommandInputWrapperComponent } from "../../../libs/ui/ui-command-helm/src/lib/hlm-command-input-wrapper.component";
 import { HlmCommandModule } from "../../../libs/ui/ui-command-helm/src/index";
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -65,6 +65,7 @@ import { HlmCommandModule } from "../../../libs/ui/ui-command-helm/src/index";
     ],
     imports: [
         BrnPopoverComponent,
+        MatExpansionModule,
         MatAutocompleteModule,
         ReactiveFormsModule,
         FormsModule,
