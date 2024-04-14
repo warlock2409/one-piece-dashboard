@@ -1,55 +1,310 @@
 <mat-stepper labelPosition="bottom" #stepper>
+<!-- Customer -->
   <mat-step [stepControl]="firstFormGroup">
-    <div class="mb-5 flex justify-end">
-      <button mat-button>New Customer</button>
+
+    <div class="mb-8 flex justify-center gap-4">
+        <button mat-button mat-raised-button [color]="existingCustomer ? 'accent' : 'primary'" (click)="changeCustomerState('exist')">Existing Customer</button>
+        <button mat-button mat-raised-button [color]="existingCustomer ? 'primary' : 'accent'" (click)="changeCustomerState('new')">Walk In Customer</button>
     </div>
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>
-        <mat-icon>person_add</mat-icon>
-      </ng-template>
 
-      <mat-form-field class="w-4/5 text-center" >
-        <mat-label> Existing Customer</mat-label>
-        <input
-          type="text"
-          placeholder="Select Customer"
-          aria-label="Number"
-          matInput
-          [formControl]="myControl"
-          [matAutocomplete]="auto"
-        />
-        <mat-autocomplete #auto="matAutocomplete">
-          @for (option of options; track option) {
-          <mat-option [value]="option">{{ option }}</mat-option>
-          }
-        </mat-autocomplete>
-      </mat-form-field>
+    @if (existingCustomer) {
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>
+              <mat-icon>person_add</mat-icon>
+            </ng-template>
 
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
+            <div class="flex justify-center mb-4">
+                <input class="w-80" hlmInput placeholder='Find by Phone/Email' type='email' />
+            </div>
+
+            <ng-container *ngFor="let i of [0, 1, 2, 3, 4];">
+                <div class="border rounded flex justify-between items-center border-gray-700 mb-2 mx-14">
+                    <!-- Customer Info -->
+                    <div class="flex gap-3 align-middle p-2">
+                        <!-- Image -->
+                        <div class="w-8 flex" style="align-items: center;">
+                            @if (i%2==0) {
+                                <img src="../../../assets/man_4140037.png" alt="">
+                            }@else {
+                                <img src="../../../assets/woman_4140047.png" alt="">
+                            }
+                        </div>
+                        <!-- info -->
+                        <div>
+                            <p>Rajaraman</p>
+                            <p class="text-gray-300">paradoxemail.com  (8531837909)</p>
+                        </div>
+                    </div>
+                    <!-- Label -->
+                    <div class="flex mr-2">
+                        <mat-icon>loyalty</mat-icon>
+                    </div>
+                </div>
+            </ng-container>
+      
+            <div class="flex justify-end my-4">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    }@else{
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>
+              <mat-icon>person_add</mat-icon>
+            </ng-template>
+
+            <div class="text-gray-300">
+                <h2 class="text-center">Primary Contact</h2>
+
+                <label hlmLabel class="block mt-4 mb-2">Name Info</label>
+                <div class="flex gap-4">
+                    <brn-select class="inline-block" placeholder="Mr">
+                        <hlm-select-trigger class="w-28">
+                          <hlm-select-value />
+                        </hlm-select-trigger>
+                        <hlm-select-content>
+                          <hlm-option value="Refresh">Mr</hlm-option>
+                          <hlm-option value="Settings">Mr</hlm-option>
+                          <hlm-option value="Help">Mr</hlm-option>
+                          <hlm-option value="Signout">Mr</hlm-option>
+                        </hlm-select-content>
+                      </brn-select>
+                    <input class="w-96" hlmInput placeholder='Customer Name' type='email' />
+                </div>
+
+                <label hlmLabel class="block mt-4 mb-2">Phone</label>
+                <div class="flex gap-4">
+                    <brn-select class="inline-block" placeholder="+91">
+                        <hlm-select-trigger class="w-28">
+                          <hlm-select-value />
+                        </hlm-select-trigger>
+                        <hlm-select-content>
+                          <hlm-option value="Refresh">91</hlm-option>
+                          <hlm-option value="Settings">92</hlm-option>
+                          <hlm-option value="Help">94</hlm-option>
+                          <hlm-option value="Signout">95</hlm-option>
+                        </hlm-select-content>
+                    </brn-select>
+
+                    <input class="w-96" hlmInput placeholder='Phone' type='number' />
+                </div>
+
+                <label hlmLabel class="block mt-4 mb-2">Email</label>
+                <input class="w-[100%]" hlmInput placeholder='Email' type='email' />
+
+                <label hlmLabel class="block mt-4 mb-2">Street</label>
+                <input class="w-[100%]" hlmInput placeholder='Address' type='text' />
+
+                <label hlmLabel class="block mt-4 mb-2">City</label>
+                <input class="w-[100%]" hlmInput placeholder='Address' type='text' />
+
+                <label hlmLabel class="block mt-4 mb-2">State</label>
+                <input class="w-[100%]" hlmInput placeholder='Address' type='text' />
+
+                <label hlmLabel class="block mt-4 mb-2">Zip</label>
+                <input class="w-[100%]" hlmInput placeholder='Address' type='text' />
+
+                
+            </div>
+      
+      
+            <div class="flex justify-end mt-8">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    }
+    
+
   </mat-step>
+<!-- Entity -->
   <mat-step [stepControl]="secondFormGroup">
+    <div class="mb-8 flex justify-center gap-4">
+        <button mat-button mat-raised-button [color]="existingPet ? 'accent' : 'primary'" (click)="changeCustomerState('existPet')">Existing Pet</button>
+        <button mat-button mat-raised-button [color]="existingPet ? 'primary' : 'accent'" (click)="changeCustomerState('newPet')">Add New Pet</button>
+    </div>
+
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>
-        <mat-icon>playlist_add_check_circle</mat-icon>
+        <mat-icon>pets</mat-icon>
       </ng-template>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input
-          matInput
-          formControlName="secondCtrl"
-          placeholder="Ex. 1 Main St, New York, NY"
-          required
-        />
-      </mat-form-field>
-      <div>
+      @if (existingPet) {
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>
+              <mat-icon>person_add</mat-icon>
+            </ng-template>
+
+            <div class="flex justify-center mb-4">
+                <input class="w-80" hlmInput placeholder='Find by name' type='email' />
+            </div>
+
+            <ng-container *ngFor="let i of [0, 1, 2, 3, 4];">
+                <div class="border rounded flex justify-between items-center border-gray-700 mb-2 mx-14">
+                    <!-- Customer Info -->
+                    <div class="flex gap-3 align-middle p-2">
+                        <!-- Image -->
+                        <div class="w-10 flex" style="align-items: center;">
+                            @if (i%2==0) {
+                                <img src="../../../assets/cat.png" alt="">
+                            }@else {
+                                <img src="../../../assets/dog.png" alt="">
+                            }
+                        </div>
+                        <!-- info -->
+                        <div>
+                            <p>Rajaraman</p>
+                            <p class="text-gray-300">German Shepard </p>
+                        </div>
+                    </div>
+                    <!-- Label -->
+                    <div class="flex mr-2">
+                        <mat-icon>loyalty</mat-icon>
+                    </div>
+                </div>
+            </ng-container>
+        </form>
+    }@else{
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>
+              <mat-icon>person_add</mat-icon>
+            </ng-template>
+
+            <div class="text-gray-300">
+                <label hlmLabel class="block mt-4 mb-2">Pet Info</label>
+                <div class="flex gap-4">
+                    <input class="w-96" hlmInput placeholder='Pet Name' type='text' />
+                    <brn-select class="inline-block" placeholder="Dog">
+                        <hlm-select-trigger class="w-28">
+                          <hlm-select-value />
+                        </hlm-select-trigger>
+                        <hlm-select-content>
+                          <hlm-option value="Refresh">Dog</hlm-option>
+                          <hlm-option value="Settings">Cat</hlm-option>
+                          <hlm-option value="Help">Fish</hlm-option>
+                          <hlm-option value="Signout">Dragon</hlm-option>
+                        </hlm-select-content>
+                      </brn-select>
+                </div>
+
+                <label hlmLabel class="block mt-4 mb-2">Breed and Sex</label>
+                <div class="flex gap-4">
+                    <input class="w-96" hlmInput placeholder='Breed' type='text' />
+
+                    <brn-select class="inline-block" placeholder="Male">
+                        <hlm-select-trigger class="w-28">
+                          <hlm-select-value />
+                        </hlm-select-trigger>
+                        <hlm-select-content>
+                          <hlm-option value="Refresh">Male</hlm-option>
+                          <hlm-option value="Settings">Female</hlm-option>
+                        </hlm-select-content>
+                    </brn-select>
+
+                </div>
+
+                <label hlmLabel class="block mt-4 mb-2">DoB</label>
+                <input class="w-[100%]" hlmInput placeholder='Birthday' type='date' />
+
+                <label hlmLabel class="block mt-4 mb-2">Weight</label>
+                <input class="w-[100%]" hlmInput placeholder='Weight' type='text' />
+
+                <label hlmLabel class="block mt-4 mb-2">Color and Size</label>
+                <div class="flex gap-4">
+                    <input class="w-96" hlmInput placeholder='Color and Markings' type='text' />
+
+                    <brn-select class="inline-block" placeholder="Small">
+                        <hlm-select-trigger class="w-28">
+                          <hlm-select-value />
+                        </hlm-select-trigger>
+                        <hlm-select-content>
+                          <hlm-option value="Refresh">Male</hlm-option>
+                          <hlm-option value="Settings">Female</hlm-option>
+                        </hlm-select-content>
+                    </brn-select>
+                </div>
+
+                <label hlmLabel class="block mt-4 mb-2">Veterinarian Name</label>
+                <input class="w-[100%]" hlmInput placeholder='Veterinarian Name' type='text' />
+
+                <label hlmLabel class="block mt-4 mb-2">Veterinarian Number</label>
+                <input class="w-[100%]" hlmInput placeholder='Veterinarian Number' type='number' />
+                
+
+                <label hlmLabel class="block mt-4 mb-2">Notes</label>
+                <input class="w-[100%]" hlmInput placeholder='Address' type='text' />
+                
+            </div>
+        </form>
+    }
+      <div class="text-right my-8">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
       </div>
+
     </form>
   </mat-step>
+<!-- Service -->
+  <mat-step>
+    <ng-template matStepLabel>
+      <mat-icon>stars</mat-icon>
+    </ng-template>
+
+    <div class="flex justify-center">
+        <brn-cmd class="w-[100%]" hlm>
+
+            <hlm-cmd-input-wrapper>
+              <hlm-icon name="lucideSearch" />
+              <input placeholder="Search Service" brnCmdInput hlm />
+            </hlm-cmd-input-wrapper>
+
+            <div *brnCmdEmpty hlmCmdEmpty>No results found.</div>
+
+            <brn-cmd-list hlm>
+
+              <brn-cmd-group hlm label="Suggestions">
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucideCalendar" hlmCmdIcon />
+                  Calendar
+                </button>
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucideSmile" hlmCmdIcon />
+                  Search Emoji
+                </button>
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucidePlus" hlmCmdIcon />
+                  Calculator
+                </button>
+              </brn-cmd-group>
+
+              <brn-cmd-separator hlm></brn-cmd-separator>
+
+              <brn-cmd-group hlm label="Settings">
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucideUser" hlmCmdIcon />
+                  Profile
+                  <hlm-cmd-shortcut>⌘P</hlm-cmd-shortcut>
+                </button>
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucideWallet" hlmCmdIcon />
+                  Billing
+                  <hlm-cmd-shortcut>⌘B</hlm-cmd-shortcut>
+                </button>
+                <button brnCmdItem hlm>
+                  <hlm-icon name="lucideCog" hlmCmdIcon />
+                  Settings
+                  <hlm-cmd-shortcut>⌘S</hlm-cmd-shortcut>
+                </button>
+              </brn-cmd-group>
+              
+            </brn-cmd-list>
+        </brn-cmd>
+    </div>
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+
+  </mat-step>
+
   <mat-step>
     <ng-template matStepLabel>
       <mat-icon>today</mat-icon>
